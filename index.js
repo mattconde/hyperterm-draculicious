@@ -25,8 +25,6 @@ const css = `
 `;
 
 exports.decorateConfig = config => {
-  console.log('draculicious!');
-
   return Object.assign({}, config, {
     padding: '4px 4px 14px 4px',
     foregroundColor: foreground,
