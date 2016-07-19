@@ -17,7 +17,6 @@ const brightWhite = '#f8f8f2';
 
 const background = '#282a36';
 const foreground = '#f8f8f2';
-
 const css = `
   .tabs_nav .tabs_list .tab_active:before{
     border-bottom-color: ${brightMagenta};
