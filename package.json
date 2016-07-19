@@ -1,0 +1,20 @@
+{
+  "name": "hyperterm-draculicious",
+  "version": "1.0.1",
+  "description": "Hyperterm theme based on the popular Dracula themes found all over the place",
+  "main": "index.js",
+  "keywords": [
+    "hyperterm",
+    "hyperterm-theme",
+    "dracula",
+    "darkcula",
+    "colors"
+  ],
+  "author": "Matthew Conde",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.1.0",
+    "eslint-config-airbnb-base": "^4.0.2",
+    "eslint-plugin-import": "^1.11.0"
+  }
+}
