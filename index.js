@@ -15,14 +15,8 @@ const brightMagenta = '#ff79c6';
 const brightCyan = '#8be9fd';
 const brightWhite = '#f8f8f2';
 
-const background = '#282a36';
-const foreground = '#f8f8f2';
-
-const css = `
-  .tabs_nav .tabs_list .tab_active:before{
-    border-bottom-color: ${brightMagenta};
-  }
-`;
+const background = black;
+const foreground = brightWhite;
 
 exports.decorateConfig = config => {
   return Object.assign({}, config, {
@@ -31,7 +25,18 @@ exports.decorateConfig = config => {
     backgroundColor: background,
     cursorColor: brightWhite,
     borderColor: background,
-    css,
+    css: `
+      ${config.css || ''}
+      .tabs_nav .tabs_list .tab_text {
+        color: ${magenta};
+      }
+      .tabs_nav .tabs_title {
+        color: ${magenta};
+      }
+      .tab_active:before {
+        border-color: ${brightMagenta};
+      }
+    `,
     colors: [
       black,
       red,

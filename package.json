@@ -1,13 +1,12 @@
 {
   "name": "hyperterm-draculicious",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "Hyperterm theme based on the popular Dracula themes found all over the place",
   "main": "index.js",
   "keywords": [
     "hyperterm",
     "hyperterm-theme",
     "dracula",
-    "darkcula",
     "colors"
   ],
   "author": "Matthew Conde",
