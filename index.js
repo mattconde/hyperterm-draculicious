@@ -34,7 +34,7 @@ exports.decorateConfig = config => {
         color: ${magenta};
       }
       .tab_active:before {
-        border-color: ${brightMagenta};
+        border-color: ${magenta};
       }
     `,
     colors: [
