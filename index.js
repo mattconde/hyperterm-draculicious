@@ -18,43 +18,41 @@ const brightWhite = '#f8f8f2';
 const background = black;
 const foreground = brightWhite;
 
-exports.decorateConfig = config => {
-  return Object.assign({}, config, {
-    padding: '4px 4px 14px 4px',
-    foregroundColor: foreground,
-    backgroundColor: background,
-    cursorColor: brightWhite,
-    borderColor: background,
-    css: `
-      ${config.css || ''}
-      .tabs_nav .tabs_list .tab_text {
-        color: ${magenta};
-      }
-      .tabs_nav .tabs_title {
-        color: ${magenta};
-      }
-      .tab_active:before {
-        border-color: ${magenta};
-      }
-    `,
-    colors: [
-      black,
-      red,
-      green,
-      yellow,
-      blue,
-      magenta,
-      cyan,
-      lightGrey,
-      darkGrey,
-      brightRed,
-      brightGreen,
-      brightYellow,
-      brightBlue,
-      brightMagenta,
-      brightCyan,
-      brightWhite,
-      foreground,
-    ],
-  });
-};
+exports.decorateConfig = config => Object.assign({}, config, {
+  padding: '14px 1px 14px 1px',
+  foregroundColor: foreground,
+  backgroundColor: background,
+  cursorColor: foreground,
+  borderColor: background,
+  css: `
+    ${config.css || ''}
+    .tabs_nav .tabs_list .tab_text {
+      color: ${magenta};
+    }
+    .tabs_nav .tabs_title {
+      color: ${magenta};
+    }
+    .tab_active:before {
+      border-color: ${magenta};
+    }
+  `,
+  colors: [
+    black,
+    red,
+    green,
+    yellow,
+    blue,
+    magenta,
+    cyan,
+    lightGrey,
+    darkGrey,
+    brightRed,
+    brightGreen,
+    brightYellow,
+    brightBlue,
+    brightMagenta,
+    brightCyan,
+    brightWhite,
+    foreground,
+  ],
+});
