@@ -1,6 +1,6 @@
 {
   "name": "hyperterm-draculicious",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hyperterm theme based on the popular Dracula themes found all over the place",
   "main": "index.js",
   "keywords": [
