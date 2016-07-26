@@ -6,7 +6,7 @@ const blue = '#2f77b9';
 const magenta = '#bd93f9';
 const cyan = '#77d6fb';
 const lightGrey = '#D3D7CF';
-const darkGrey = '#44475a';
+const darkGrey = '#8a8b96';
 const brightRed = '#ff5555';
 const brightGreen = '#50fa7b';
 const brightYellow = '#f1fa8c';
@@ -17,6 +17,7 @@ const brightWhite = '#f8f8f2';
 
 const background = black;
 const foreground = brightWhite;
+// const border = '#44475a'; // Original dark grey
 
 exports.decorateConfig = config => Object.assign({}, config, {
   padding: '14px 1px 14px 1px',
@@ -27,13 +28,30 @@ exports.decorateConfig = config => Object.assign({}, config, {
   css: `
     ${config.css || ''}
     .tabs_nav .tabs_list .tab_text {
+      color: ${lightGrey};
+    }
+    .tabs_nav .tabs_list .tab_textActive {
       color: ${magenta};
     }
     .tabs_nav .tabs_title {
       color: ${magenta};
     }
+    .tab_tab:before{
+      position: absolute;
+      content: " ";
+      border-bottom: 1px solid ${background};
+      display: block;
+      left: 50%;
+      right: 0px;
+      bottom: -1px;
+      transform: translateX(-50%);
+      transition: color 200ms ease-in,
+                  width 175ms ease-in;
+      width: 0%;
+    }
     .tab_active:before {
       border-color: ${magenta};
+      width: 100%;
     }
   `,
   colors: [
