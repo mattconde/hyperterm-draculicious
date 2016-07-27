@@ -17,60 +17,67 @@ const brightWhite = '#f8f8f2';
 
 const background = black;
 const foreground = brightWhite;
-// const border = '#44475a'; // Original dark grey
 
-exports.decorateConfig = config => Object.assign({}, config, {
-  padding: '14px 1px 14px 1px',
-  foregroundColor: foreground,
-  backgroundColor: background,
-  cursorColor: foreground,
-  borderColor: background,
-  css: `
-    ${config.css || ''}
-    .tabs_nav .tabs_list .tab_text {
-      color: ${lightGrey};
-    }
-    .tabs_nav .tabs_list .tab_textActive {
-      color: ${magenta};
-    }
-    .tabs_nav .tabs_title {
-      color: ${magenta};
-    }
-    .tab_tab:before{
-      position: absolute;
-      content: " ";
-      border-bottom: 1px solid ${background};
-      display: block;
-      left: 50%;
-      right: 0px;
-      bottom: -1px;
-      transform: translateX(-50%);
-      transition: color 175ms ease-in,
-                  width 175ms ease-in;
-      width: 0%;
-    }
-    .tab_active:before {
-      border-color: ${magenta};
-      width: 100%;
-    }
-  `,
-  colors: [
-    black,
-    red,
-    green,
-    yellow,
-    blue,
-    magenta,
-    cyan,
-    darkGrey,
-    lightGrey,
-    brightRed,
-    brightGreen,
-    brightYellow,
-    brightBlue,
-    brightMagenta,
-    brightCyan,
-    brightWhite,
-    foreground,
-  ],
-});
+exports.decorateConfig = config => {
+  const draculicious = Object.assign({}, {
+    activeTabHighlightHeight: '2px',
+    activeTabHighlightTransitionDuration: '0.25s',
+    activeTabHighlightTransitionTimingFunction: 'ease-out',
+  }, config.draculicious || {});
+  return Object.assign({}, config, {
+    padding: '14px 1px 14px 1px',
+    foregroundColor: foreground,
+    backgroundColor: background,
+    cursorColor: foreground,
+    borderColor: background,
+    css: `
+      ${config.css || ''}
+      .tabs_nav .tabs_list .tab_text {
+        color: ${lightGrey};
+      }
+      .tabs_nav .tabs_list .tab_textActive {
+        color: ${magenta};
+      }
+      .tabs_nav .tabs_title {
+        color: ${magenta};
+      }
+      .tab_tab:before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        background: ${background};
+        height: ${draculicious.activeTabHighlightHeight};
+        transition-property: left, right;
+        transition-duration: ${draculicious.activeTabHighlightTransitionDuration};
+        transition-timing-function: ${draculicious.activeTabHighlightTransitionTimingFunction};
+      }
+      .tab_tab.tab_active:before {
+        background: ${magenta};
+        left: 0;
+        right: 0;
+      }
+    `,
+    colors: [
+      black,
+      red,
+      green,
+      yellow,
+      blue,
+      magenta,
+      cyan,
+      darkGrey,
+      lightGrey,
+      brightRed,
+      brightGreen,
+      brightYellow,
+      brightBlue,
+      brightMagenta,
+      brightCyan,
+      brightWhite,
+      foreground,
+    ],
+  });
+};
