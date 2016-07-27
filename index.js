@@ -5,8 +5,8 @@ const yellow = '#ffb86c';
 const blue = '#2f77b9';
 const magenta = '#bd93f9';
 const cyan = '#77d6fb';
-const lightGrey = '#D3D7CF';
 const darkGrey = '#8a8b96';
+const lightGrey = '#D3D7CF';
 const brightRed = '#ff5555';
 const brightGreen = '#50fa7b';
 const brightYellow = '#f1fa8c';
@@ -45,7 +45,7 @@ exports.decorateConfig = config => Object.assign({}, config, {
       right: 0px;
       bottom: -1px;
       transform: translateX(-50%);
-      transition: color 200ms ease-in,
+      transition: color 175ms ease-in,
                   width 175ms ease-in;
       width: 0%;
     }
@@ -62,8 +62,8 @@ exports.decorateConfig = config => Object.assign({}, config, {
     blue,
     magenta,
     cyan,
-    lightGrey,
     darkGrey,
+    lightGrey,
     brightRed,
     brightGreen,
     brightYellow,
