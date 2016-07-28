@@ -23,9 +23,10 @@ exports.decorateConfig = config => {
     activeTabHighlightHeight: '2px',
     activeTabHighlightTransitionDuration: '0.25s',
     activeTabHighlightTransitionTimingFunction: 'ease-out',
+    padding: '14px 1px 14px 1px'
   }, config.draculicious || {});
   return Object.assign({}, config, {
-    padding: '14px 1px 14px 1px',
+    padding: draculicious.padding,
     foregroundColor: foreground,
     backgroundColor: background,
     cursorColor: foreground,
