@@ -1,6 +1,6 @@
 # hyperterm-draculicious
 
-[HyperTerm](https://hyperterm.org) theme currently a tweak of the popular [Dracula](https://draculatheme.com/).
+Another [HyperTerm](https://hyperterm.org) theme currently a tweak of the popular [Dracula](https://draculatheme.com/).
 
 ### Installation
 
