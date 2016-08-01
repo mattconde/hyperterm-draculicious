@@ -1,29 +1,31 @@
-const black = '#282a36';
-const red = '#ee3c3c';
-const green = '#66de3d';
-const yellow = '#ffb86c';
-const blue = '#2f77b9';
-const magenta = '#bd93f9';
-const cyan = '#77d6fb';
-const darkGrey = '#47474c';
-const lightGrey = '#a7a8ad';
-const brightRed = '#ff5555';
-const brightGreen = '#50fa7b';
-const brightYellow = '#f1fa8c';
-const brightBlue = '#4590d6';
-const brightMagenta = '#ff79c6';
-const brightCyan = '#8be9fd';
-const brightWhite = '#f8f8f2';
+const colors = {
+  black: '#282a36',
+  red: '#ee3c3c',
+  green: '#66de3d',
+  yellow: '#ffb86c',
+  blue: '#2f77b9',
+  magenta: '#bd93f9',
+  cyan: '#77d6fb',
+  white: '#47474c',
+  lightBlack: '#a7a8ad',
+  lightRed: '#ff5555',
+  lightGreen: '#50fa7b',
+  lightYellow: '#f1fa8c',
+  lightBlue: '#4590d6',
+  lightMagenta: '#ff79c6',
+  lightCyan: '#8be9fd',
+  lightWhite: '#f8f8f2'
+};
 
-const background = black;
-const foreground = brightWhite;
+const background = colors.black;
+const foreground = colors.lightWhite;
 
 exports.decorateConfig = config => {
   const draculicious = Object.assign({}, {
     activeTabHighlightHeight: '2px',
     activeTabHighlightTransitionDuration: '0.25s',
     activeTabHighlightTransitionTimingFunction: 'ease-out',
-    padding: '14px 1px 14px 1px'
+    padding: '14px 0px 0px 0px'
   }, config.draculicious || {});
   return Object.assign({}, config, {
     padding: draculicious.padding,
@@ -34,13 +36,13 @@ exports.decorateConfig = config => {
     css: `
       ${config.css || ''}
       .tabs_nav .tabs_list .tab_text {
-        color: ${lightGrey};
+        color: ${colors.lightGrey};
       }
       .tabs_nav .tabs_list .tab_textActive {
-        color: ${magenta};
+        color: ${colors.magenta};
       }
       .tabs_nav .tabs_title {
-        color: ${magenta};
+        color: ${colors.magenta};
       }
       .tab_tab:before{
         content: "";
@@ -56,29 +58,11 @@ exports.decorateConfig = config => {
         transition-timing-function: ${draculicious.activeTabHighlightTransitionTimingFunction};
       }
       .tab_tab.tab_active:before {
-        background: ${magenta};
+        background: ${colors.magenta};
         left: 0;
         right: 0;
       }
     `,
-    colors: [
-      black,
-      red,
-      green,
-      yellow,
-      blue,
-      magenta,
-      cyan,
-      darkGrey,
-      lightGrey,
-      brightRed,
-      brightGreen,
-      brightYellow,
-      brightBlue,
-      brightMagenta,
-      brightCyan,
-      brightWhite,
-      foreground,
-    ],
+    colors,
   });
 };
